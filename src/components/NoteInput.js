@@ -7,7 +7,7 @@ function NoteInput({ groupId, onNoteAdded }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (content) {
-      const res = await axios.post('https://notes-application-rc9p.onrender.com/api/notes', { groupId, content });
+      const res = await axios.post('https://backend-notes-application-ddw3.onrender.com/api/notes', { groupId, content });
       onNoteAdded(res.data);
       setContent('');
     }

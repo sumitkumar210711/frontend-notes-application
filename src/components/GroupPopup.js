@@ -11,12 +11,12 @@ function GroupPopup({ onClose, onGroupAdded }) {
     if (name) {
       try {
         // verifies that the group already exists or not
-        const res = await axios.get(`https://notes-application-rc9p.onrender.com/api/groups?name=${name}`);
+        const res = await axios.get(`https://backend-notes-application-ddw3.onrender.com/api/groups?name=${name}`);
         if (res.data.exists) {
           setError('Group name already exists');
         } else {
           // Create the new group
-          const newGroup = await axios.post('https://notes-application-rc9p.onrender.com/api/groups', { name, color });
+          const newGroup = await axios.post('https://backend-notes-application-ddw3.onrender.com/api/groups', { name, color });
           onGroupAdded(newGroup.data);
           onClose();
         }
